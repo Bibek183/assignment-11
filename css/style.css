@@ -1,0 +1,576 @@
+/* Importing a Google font called Yanone Kaffeesatz to use in the website */
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200;300;400;500&display=swap');
+
+/* Defining a color variable named --red so we can use it easily later */
+:root{
+    --red:#ff1a1a;  /* bright red color */
+}
+
+/* Apply styles to all elements (*) */
+*{
+    font-family: 'Yanone Kaffeesatz', sans-serif; /* Use the imported font for all text */
+    margin:0;  /* Remove default space around elements */
+    padding:0; /* Remove default padding inside elements */
+    box-sizing: border-box; /* Make width and height include padding and border */
+    text-decoration: none; /* Remove underlines from links */
+    outline: none; /* Remove outline when elements are focused */
+    border:none; /* Remove any default borders */
+    transition: all .3s cubic-bezier(.16,.8,.62,1.52); /* Smooth animation effect on changes */
+    text-transform: capitalize; /* Make first letter of each word uppercase */
+    font-weight: normal; /* Set normal weight for text */
+}
+
+/* Style for text when selected (highlighted by mouse or keyboard) */
+*::selection{
+    background:var(--red); /* Background color when text is selected */
+    color:#fff; /* Text color when selected */
+}
+
+/* Style for the whole HTML page */
+html{
+    font-size: 62.5%; /* Make 1rem equal to 10px for easy sizing */
+    overflow-x: hidden; /* Hide horizontal scroll to prevent side scrolling */
+}
+
+/* Style for the whole page body */
+body{
+    overflow-x: hidden; /* Also hide horizontal scroll on body */
+}
+
+/* Style the scrollbar width */
+html::-webkit-scrollbar{
+    width:1.3rem; /* Width of scrollbar */
+}
+
+/* Style the scrollbar track (background area of scrollbar) */
+html::-webkit-scrollbar-track{
+    background:#000; /* Black background for scrollbar track */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+html::-webkit-scrollbar-thumb{
+    background:var(--red); /* Use red color for scrollbar handle */
+}
+
+/* Style all section elements */
+section{
+    min-height: 100vh; /* Make each section at least full screen height */
+    padding:0 7%; /* Add space left and right inside sections */
+    padding-top: 11rem; /* Add space at the top to separate from header */
+}
+
+/* Style for buttons with class "btn" */
+.btn{
+    display: inline-block; /* Make buttons inline but behave like block */
+    padding:.7rem 4rem; /* Space inside the button: 0.7rem top/bottom, 4rem left/right */
+    font-size: 2rem; /* Text size inside button */
+    color:#fff; /* White text color */
+    background:var(--red); /* Red background color */
+    padding-top: 1rem; /* Extra top padding to make button taller */
+    margin-top: 1rem; /* Space above the button */
+}
+
+/* When hovering over buttons */
+.btn:hover{
+    transform:scale(1.02); /* Slightly grow the button size for effect */
+}
+
+
+/* Style for elements with class "heading" */
+.heading{
+    text-align: center; /* Center the text inside */
+    color: var(--red); /* Use the red color defined earlier */
+    text-transform: uppercase; /* Make all letters uppercase */
+    font-size: 4rem; /* Big font size */
+}
+
+/* Style for <span> inside any element with class "heading" */
+.heading span{
+    color: #666; /* Dark grey color for this text */
+}
+
+/* Style for the <header> element */
+header{
+    position: fixed; /* Fix it at the top even when scrolling */
+    top: 2.5rem; /* Space from the top of the page */
+    left: 50%; /* Position horizontally in the center */
+    transform: translateX(-50%); /* Shift left by 50% width to truly center it */
+    width: 93%; /* Take 93% width of the screen */
+    z-index: 1000; /* Stay on top of other elements */
+    background: #fff; /* White background */
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1); /* Light shadow for depth */
+    display: flex; /* Use flexbox to arrange children */
+    align-items: center; /* Vertically center content */
+    justify-content: space-between; /* Space between logo and menu */
+    padding: 2rem 3rem; /* Space inside header */
+    border-radius: .5rem; /* Rounded corners */
+}
+
+/* Style for elements with class "logo" inside header */
+header .logo{
+    color: #333; /* Dark grey text color */
+    font-size: 2.5rem; /* Font size */
+}
+
+/* Style for <span> inside the logo */
+header .logo span{
+    color: var(--red); /* Make the part inside span red */
+}
+
+/* Style the <ul> inside an element with class "navbar" inside header */
+header .navbar ul{
+    display: flex; /* Arrange list items horizontally */
+    align-items: center; /* Vertically center the list items */
+    justify-content: center; /* Center them horizontally */
+    list-style: none; /* Remove default bullet points */
+}
+
+/* Style each <li> inside the above <ul> */
+header .navbar ul li{
+    margin-left: 3rem; /* Space between each menu item */
+}
+
+/* Style the <a> links inside the list items */
+header .navbar ul li a{
+   font-size: 2rem; /* Make text size bigger */
+   color: #333; /* Dark grey color */
+}
+
+/* Style the active or hovered <a> links */
+header .navbar ul li a.active,
+header .navbar ul li a:hover{
+    color: var(--red); /* Change text to red on hover or active */
+}
+
+
+#menu{
+    font-size: 3rem; /* Size of the menu icon */
+    color:#666; /* Gray color */
+    cursor: pointer;/* Cursor changes to pointer on hover */
+    display: none; /* Hidden by default */
+}
+
+.home{
+    display: flex; /* Use flexbox to layout child elements */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    flex-wrap: wrap; /* Allow items to wrap to next line if needed */
+    background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url(../images/H-bg.jpg) no-repeat; /* Dark overlay on background image */
+    background-size: cover; /* Cover entire container */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Background stays fixed on scroll */
+}
+
+.home .image{
+    flex:1 1 40rem; /* Flexible box: grow and shrink with minimum width 40rem */
+}
+
+.home .image img{
+    width:100%; /* Image takes full width of container */
+}
+
+.home .content{
+    flex:1 1 40rem; /* Flexible box: grow and shrink with minimum width 40rem */
+    padding:4rem 0; /* Top and bottom padding */
+}
+
+.home .content h3{
+    color:var(--red); /* Red color text */
+    font-size: 4rem; /* Font size */
+    padding-bottom: 1rem; /* Space below */
+}
+
+.home .content h1{
+    color:#fff; /* White text */
+    font-size: 7rem; /* Large font size */
+}
+
+.home .content p{
+    color:#aaa; /* Light gray text */
+    font-size: 2.5rem; /* Font size */
+    padding:1rem 0; /* Top and bottom padding */
+}
+
+.gallery{
+    background:#f0f0f0; /* Light gray background */
+}
+
+.gallery .box-container{
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.gallery .box-container .box{
+    flex:1 1 30rem; /* Flexible box with min width 30rem */
+    height:40rem; /* Fixed height */
+    overflow: hidden; /* Hide overflow content */
+    background:#333; /* Dark background */
+    text-align: center; /* Center text inside */
+    padding:2rem; /* Padding inside box */
+    margin:2rem; /* Margin outside box */
+    border-radius: .5rem; /* Rounded corners */
+    position: relative; /* Position relative for absolute children */
+}
+
+.gallery .box-container .box img{
+    width: 100%; /* Image fills box width */
+    height:100%; /* Image fills box height */
+    object-fit: cover; /* Image covers area without stretching */
+    object-position: center; /* Center image inside */
+}
+
+.gallery .box-container .box .info{
+    position: absolute; /* Positioned relative to parent */
+    bottom:-120%; /* Start hidden below box */
+    left:50%; /* Center horizontally */
+    transform: translateX(-50%); /* Shift left 50% to center */
+    width:80%; /* Width of info box */
+    background:#fff; /* White background */
+    padding:2rem; /* Padding inside */
+    border:.3rem solid var(--red); /* Red border */
+    border-radius: .5rem; /* Rounded corners */
+}
+
+.gallery .box-container .box:hover .info{
+    bottom:2rem; /* Slide info box up on hover */
+}
+
+.gallery .box-container .box:hover img{
+    transform: scale(1.2); /* Zoom image on hover */
+}
+
+.gallery .box-container .box:hover{
+    background:#111; /* Darker background on hover */
+}
+
+.gallery .box-container .box .info h3{
+    background:var(--red); /* Red background */
+    color:#fff; /* White text */
+    border-radius: .5rem; /* Rounded corners */
+    margin:0 5rem; /* Side margins */
+    margin-top: -3.7rem; /* Pull up text */
+    padding:.5rem 2rem; /* Padding */
+    font-size: 2.5rem; /* Font size */
+}
+
+.gallery .box-container .box .info p{
+    font-size: 2rem; /* Font size */
+    color:#666; /* Gray text */
+    padding:.5rem; /* Padding */
+    padding-top: 2rem; /* Extra padding on top */
+}
+
+
+.about{
+    background:#eee; /* Light gray background for about section */
+    padding-bottom: 3rem; /* Space below content */
+}
+
+.about .row{
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Vertically center items */
+    justify-content: center; /* Horizontally center items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.about .row .image{
+    flex:1 1 40rem; /* Flexible box, min width 40rem */
+    padding: 2rem 0; /* Top and bottom padding */
+    text-align: center; /* Center image horizontally */
+}
+
+.about .row .image img{
+    max-width: 90%; /* Image can be max 90% wide */
+    height:auto; /* Keep aspect ratio */
+    max-height: 35rem; /* Max height to limit image size */
+    object-fit: contain; /* Keep entire image visible inside box */
+}
+
+.about .row .content{
+    flex:1 1 40rem; /* Flexible box, min width 40rem */
+}
+
+.about .row .content h3{
+    font-size: 5.5rem; /* Large heading size */
+    color:#333; /* Dark gray text */
+}
+
+.about .row .content p{
+    font-size: 2.2rem; /* Paragraph text size */
+    color:#666; /* Medium gray text */
+    padding:1rem 0; /* Space above and below paragraphs */
+}
+
+.movies{
+    background:#222; /* Dark background for movies section */
+}
+
+.movies .heading span{
+    color:#fff; /* White color for span text in heading */
+}
+
+.movies .box-container{
+    display: flex; /* Flexbox container */
+    align-items: center; /* Vertically center items */
+    justify-content: center; /* Horizontally center items */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.movies .box-container .box{
+    flex:1 1 30rem; /* Flexible box, min width 30rem */
+    height:40rem; /* Fixed height for each movie box */
+    overflow: hidden; /* Hide overflow content */
+    position: relative; /* Needed for absolute positioned children */
+    margin:2rem; /* Space around each box */
+    box-shadow: 0 .3rem .5rem #000; /* Shadow effect */
+}
+
+.movies .box-container .box img{
+    height:100%; /* Image fills height of box */
+    width:100%; /* Image fills width of box */
+    object-fit: cover; /* Image covers the box area */
+    object-position: center; /* Center image inside box */
+}
+
+.movies .box-container .box .info{
+    padding:2rem; /* Inner spacing */
+    width:100%; /* Full width */
+    position: absolute; /* Positioned relative to box */
+    bottom:-100%; /* Hidden below the box by default */
+    left:0; /* Align left */
+    background:rgba(0,0,0,.7); /* Semi-transparent black background */
+}
+
+.movies .box-container .box:hover .info{
+    bottom:0; /* Slide info up on hover */
+}
+
+.movies .box-container .box .info h3{
+    font-size: 3rem; /* Heading size */
+    color:#fff; /* White text */
+    padding-bottom: .5rem; /* Space below heading */
+}
+
+.movies .box-container .box .info span{
+    font-size: 2rem; /* Span text size */
+    color:var(--red); /* Use the red color variable */
+}
+
+.movies .box-container .box .info .stars i{
+    font-size: 2rem; /* Star icon size */
+    color:orange; /* Orange star color */
+    padding:1rem .1rem; /* Padding around stars */
+}
+
+.movies .box-container .box .info p{
+    font-size: 2rem; /* Paragraph text size */
+    color:#ccc; /* Light gray text */
+    padding:.5rem 0; /* Space above and below paragraph */
+}
+
+.product{
+    background:#eee; /* Light grey background for the product section */
+}
+
+/* .box-container means: select any element with class 'box-container' */
+.product .box-container{
+    display: flex; /* Use flexbox to arrange child boxes in a row */
+    align-items: center; /* Vertically center the boxes */
+    justify-content: center; /* Horizontally center the boxes */
+    flex-wrap: wrap; /* Allow boxes to move to the next line if needed */
+}
+
+/* Each box inside the container */
+.product .box-container .box{
+    margin:1rem; /* Space around each box */
+    padding:2rem; /* Inside space of the box */
+    background:#fff; /* White background for boxes */
+    border:.1rem solid rgba(0,0,0,.1); /* Light border around boxes */
+    text-align: center; /* Center text inside box */
+    width:27rem; /* Fixed width for each box */
+}
+
+/* Add shadow effect when hovering on the box */
+.product .box-container .box:hover{
+    box-shadow: 0 .7rem 1rem rgba(0,0,0,.1);
+}
+
+/* Style the product image */
+.product .box-container .box img{
+    margin:2rem 0; /* Vertical space above and below image */
+    height:17rem; /* Fixed height for images */
+}
+
+/* Style for product titles */
+.product .box-container .box h3{
+    color:#444; /* Dark grey text color */
+    font-size: 3rem; /* Font size */
+}
+
+/* Style for product description */
+.product .box-container .box p{
+    color:#999; /* Light grey text color */
+    font-size: 2rem;
+    padding:1rem 0; /* Vertical padding */
+}
+
+/* Style for product price */
+.product .box-container .box .price{
+    color:#666; /* Medium grey text color */
+    font-size: 3rem;
+}
+
+.footer{
+    text-align: center; /* Center all text inside footer */
+    background:#222; /* Dark background color for footer */
+}
+
+/* Container for social media links */
+.footer .share{
+    display: flex; /* Use flexbox to arrange links in a row */
+    align-items: center; /* Vertically center the links */
+    justify-content: center; /* Horizontally center the links */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    padding:2rem 0; /* Vertical padding above and below */
+}
+
+/* Style for each social media link */
+.footer .share a{
+    font-size: 2rem; /* Size of the icon and text */
+    color:#ccc; /* Light grey color */
+    padding:2rem; /* Space around each link */
+}
+
+/* Hover effect on social media links */
+.footer .share a:hover{
+    color:#eee; /* Slightly brighter on hover */
+}
+
+/* Underline links on hover anywhere in footer */
+.footer a:hover{
+    text-decoration: underline;
+}
+
+/* Style for credit text at bottom */
+.footer .credit{
+    padding:2rem 1rem; /* Space inside credit area */
+    font-size: 3rem; /* Larger font size */
+    color:#fff; /* White text color */
+    background:#111; /* Darker background */
+}
+
+/* Credit link color */
+.footer .credit a{
+    color:var(--red); /* Use the defined red color */
+}
+
+/* Scroll to top button */
+.scroll-top{
+    position: fixed; /* Fix position on screen */
+    bottom:7.5rem; right:2rem; /* Bottom-right corner */
+    z-index: 1000; /* On top of most elements */
+    display: none; /* Hidden by default, shown via JS */
+}
+
+/* Scroll button image style */
+.scroll-top img{
+    height:7rem; /* Size of the image */
+    filter:drop-shadow(0 .3rem .5rem rgba(0,0,0,.2)); /* Soft shadow */
+}
+
+.profile-links a {
+  display: block;       /* Each link takes a full line */
+  margin-bottom: 8px;   /* Adds space between links */
+  text-decoration: none; /* Optional: remove underline */
+  color: inherit;        /* Keep the same text color */
+}
+
+
+
+
+/* For screens smaller than 991px */
+@media (max-width:991px){
+    html{
+        font-size: 55%; /* Slightly smaller base font */
+    }
+}
+
+/* For screens smaller than 768px */
+@media (max-width:768px){
+    #menu{
+        display: block; /* Show the menu icon */
+    }
+
+    header .navbar{
+        position: fixed; /* Fix navbar on screen */
+        top:110%; left:0;
+        background:#fff; /* White background */
+        width: 100%; /* Full width */
+        border-radius: .5rem;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+        transform:scaleY(0); /* Hide navbar initially */
+        transform-origin: top;
+        opacity: 0; /* Transparent initially */
+    }
+
+    /* Navbar links arranged in column */
+    header .navbar ul{
+        flex-flow: column;
+        padding:2rem;
+    }
+
+    header .navbar ul li{
+        margin:1rem 0;
+        width:100%;
+    }
+
+    /* Navbar links full width with bottom border */
+    header .navbar ul li a{
+        display: block;
+        font-size: 2.5rem;
+        border-bottom: .1rem solid rgba(0,0,0,.1);
+        padding:1.5rem 0;
+    }
+
+    /* Rotate close icon */
+    .fa-times{
+        transform: rotate(180deg);
+    }
+
+    /* Show navbar when toggled */
+    header .navbar.nav-toggle{
+        transform:scaleY(1);
+        opacity: 1;
+    }
+
+    /* Center home content text */
+    .home .content{
+        text-align: center;
+    }
+}
+
+/* For very small screens less than 400px */
+@media (max-width:400px){
+    html{
+        font-size: 50%; /* Even smaller font size */
+    }
+
+    section{
+        padding:0 3%; /* Less padding */
+        padding-top: 11rem;
+    }
+
+    /* Make about image fully responsive */
+    .about .row .image img{
+        height: auto;
+        width:100%;
+    }
+
+    /* Make product boxes full width */
+    .product .box-container .box{
+        width: 100%;
+    }
+}
+

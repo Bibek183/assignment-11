@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shazam | Superhero Profile</title>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f9e000;
+      color: #4a2900;
+      line-height: 1.6;
+    }
+                              
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: #b8860b;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff200;
+      text-decoration: none;
+      text-shadow: 0 0 8px #fff200;
+    }
+
+    .logo span {
+      color: #ffd700;
+    }
+
+    .navbar a {
+      color: #4a2900;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #fff200;
+    }
+
+    #menu {
+      font-size: 22px;
+      color: #4a2900;
+      cursor: pointer;
+      display: none;
+    }
+
+    .home {
+      height: 100vh;
+      background: url("../images/img9-minn.jpg") no-repeat center center/cover;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: left;
+      padding: 0 20px;
+    }
+
+    .home .content h1 {
+      font-size: 4rem;
+      color: #fff200;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px #fff200;
+    }
+
+    .home .content p {
+      font-size: 1.5rem;
+      color: #4a2900;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-shadow: 1px 1px 3px #fff200;
+    }
+
+    section {
+      padding: 100px 20px 50px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: #b8860b;
+      margin-bottom: 20px;
+      text-align: center;
+      text-shadow: 0 0 10px #b8860b;
+    }
+
+    p {
+      font-size: 18px;
+      text-align: justify;
+    }
+
+    .powers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .power-item {
+      background: #fff200;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #b8860b;
+      text-align: center;
+      transition: transform 0.3s ease;
+      color: #4a2900;
+      font-weight: 700;
+    }
+
+    .power-item:hover {
+      transform: scale(1.05);
+      background: #ffd700;
+      box-shadow: 0 0 15px #fff200;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid #b8860b;
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #b8860b;
+      text-align: center;
+      padding: 20px;
+      color: #4a2900;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background-color: #b8860b;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border: 1px solid #fff200;
+        padding: 10px;
+      }
+
+      .navbar.nav-toggle {
+        display: flex;
+      }
+
+      #menu {
+        display: block;
+      }
+    }
+  </style>
+
+  <script>
+    $(document).ready(function(){
+      $('#menu').click(function(){
+        $(this).toggleClass('fa-times');
+        $('.navbar').toggleClass('nav-toggle');
+      });
+
+      $(window).on('scroll load', function(){
+        $('#menu').removeClass('fa-times');
+        $('.navbar').removeClass('nav-toggle');
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <a href="pages/shazam.html" class="logo">Super<span>Heroes</span></a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="#about">About</a>
+      <a href="#powers">Powers</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+    <div id="menu" class="fas fa-bars"></div>
+  </header>
+
+  <section class="home" id="home">
+    <div class="content">
+      <h1>Shazam</h1>
+      <p>The World's Mightiest Mortal</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h1>About Shazam</h1>
+    <p>Shazam, formerly known as Captain Marvel, is a superhero empowered by ancient magic. When Billy Batson says the magic word "SHAZAM," he transforms into an adult superhero with the powers of six legendary figures: Solomon, Hercules, Atlas, Zeus, Achilles, and Mercury.</p>
+    <p>Shazam was first introduced in <strong>Whiz Comics #2 (1940)</strong> and continues to be a fan favorite for his blend of magic and youthful spirit.</p>
+    <p>The 2019 live-action movie starring Zachary Levi brought Shazam’s lightning-fast charm to life for a new generation.</p>
+  </section>
+
+  <section id="powers">
+    <h2>Super Powers</h2>
+    <div class="powers-grid">
+      <div class="power-item">Wisdom of Solomon</div>
+      <div class="power-item">Strength of Hercules</div>
+      <div class="power-item">Stamina of Atlas</div>
+      <div class="power-item">Power of Zeus</div>
+      <div class="power-item">Courage of Achilles</div>
+      <div class="power-item">Speed of Mercury</div>
+      <div class="power-item">Flight</div>
+      <div class="power-item">Lightning Manipulation</div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="../images/sh11.jpg" alt="">
+      <img src="../images/sh12.jpg" alt="">
+      <img src="../images/sh13.jpg" alt="">
+      <img src="../images/sh14.jpg" alt="">
+      <img src="../images/sh15.jpg" alt="">
+      <img src="../images/sh16.jpg" alt="">
+      <img src="../images/sh17.jpg" alt="">
+      <img src="../images/sh17.jpg" alt="">
+
+     
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Superhero Universe. All rights reserved.</p>
+  </footer>
+</body>
+</html>
