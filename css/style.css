@@ -1,9 +1,7 @@
-/* Root variables */
 :root{
     --red:#ff1a1a;
 }
 
-/* Global styles */
 *{
     font-family: 'Yanone Kaffeesatz', sans-serif;
     margin:0;
@@ -31,7 +29,6 @@ body{
     overflow-x: hidden;
 }
 
-/* Scrollbar */
 html::-webkit-scrollbar{
     width:1.3rem;
 }
@@ -44,7 +41,6 @@ html::-webkit-scrollbar-thumb{
     background:var(--red);
 }
 
-/* Navigation Bar */
 header{
     position: fixed;
     top: 2.5rem;
@@ -91,7 +87,6 @@ header .navbar ul li a:hover{
     color: var(--red);
 }
 
-/* Menu toggle icon */
 #menu{
     font-size: 3rem;
     color:#666;
@@ -99,7 +94,6 @@ header .navbar ul li a:hover{
     display: none;
 }
 
-/* Scroll-to-top button */
 .scroll-top{
     position: fixed;
     bottom:7.5rem; right:2rem;
@@ -112,24 +106,20 @@ header .navbar ul li a:hover{
     color: var(--red);
 }
 
-/* Style for each social media link */
 .footer .share a{
     font-size: 2rem; 
     color:#ccc; 
     padding:2rem; 
 }
 
-/* Hover effect on social media links */
 .footer .share a:hover{
     color:#eee; 
 }
 
-/* Underline links on hover anywhere in footer */
 .footer a:hover{
     text-decoration: underline;
 }
 
-/* Footer */
 .footer{
     text-align: center;
     background:#222;
@@ -168,7 +158,6 @@ header .navbar ul li a:hover{
     color:var(--red);
 }
 
-/* Global button style */
 .btn{
     display: inline-block;
     padding:.7rem 4rem;
@@ -183,7 +172,6 @@ header .navbar ul li a:hover{
     transform:scale(1.02);
 }
 
-/* Media Queries */
 @media (max-width:991px){
     html{
         font-size: 55%;
