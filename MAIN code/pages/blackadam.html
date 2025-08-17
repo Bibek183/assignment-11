@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Black Adam | Superhero Profile</title>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #2b2b2b;
+      color: #f3f3f3;
+      line-height: 1.6;
+    }
+                              
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: #111;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: gold;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: red;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: gold;
+    }
+
+    #menu {
+      font-size: 22px;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    .home {
+      height: 100vh;
+      background: url("../Assets/images/img8-minn.avif") no-repeat center center/cover;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: left;
+      padding: 0 20px;
+    }
+
+    .home .content h1 {
+      font-size: 4rem;
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+    .home .content p {
+      font-size: 1.5rem;
+      color: #000000;
+    }
+
+    section {
+      padding: 100px 20px 50px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: gold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 18px;
+      text-align: justify;
+    }
+
+    .powers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .power-item {
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid gold;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .power-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid gold;
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background-color: #111;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border: 1px solid gold;
+        padding: 10px;
+      }
+
+      .navbar.nav-toggle {
+        display: flex;
+      }
+
+      #menu {
+        display: block;
+      }
+    }
+  </style>
+
+  <script>
+    $(document).ready(function(){
+      $('#menu').click(function(){
+        $(this).toggleClass('fa-times');
+        $('.navbar').toggleClass('nav-toggle');
+      });
+
+      $(window).on('scroll load', function(){
+        $('#menu').removeClass('fa-times');
+        $('.navbar').removeClass('nav-toggle');
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <a href="pages/blackadam.html" class="logo">Super<span>Heroes</span></a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="#about">About</a>
+      <a href="#powers">Powers</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+    <div id="menu" class="fas fa-bars"></div>
+  </header>
+
+  <section class="home" id="home">
+    <div class="content">
+      <h1>Black Adam</h1>
+      <p>The Anti-Hero of Kahndaq</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h1>About Black Adam</h1>
+    <p>Black Adam, born Teth-Adam, was a champion chosen by the wizard Shazam in ancient Kahndaq. Empowered by the gods, he sought to protect his people but was eventually corrupted by his own power and desire for vengeance. After centuries of imprisonment, he returns to the modern world, determined to enforce his own form of justice — often clashing with both heroes and villains.</p>
+    <p>Black Adam made his first comic appearance in <strong>The Marvel Family #1 (1945)</strong>. Known for his complex morality, he has been portrayed as both a ruthless villain and a reluctant protector.</p>
+    <p>In live-action, <strong>Dwayne "The Rock" Johnson</strong> brought the character to life in the 2022 film <strong>"Black Adam"</strong>, expanding his presence in the DC cinematic universe.</p>
+  </section>
+
+  <section id="powers">
+    <h2>Super Powers</h2>
+    <div class="powers-grid">
+      <div class="power-item">Superhuman Strength</div>
+      <div class="power-item">Superhuman Speed</div>
+      <div class="power-item">Flight</div>
+      <div class="power-item">Magic Lightning Manipulation</div>
+      <div class="power-item">Enhanced Stamina & Endurance</div>
+      <div class="power-item">Near-Invulnerability</div>
+      <div class="power-item">Wisdom of Zehuti</div>
+      <div class="power-item">Courage of Mehen</div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="../Assets/images/bl11.jpg" alt="Black Adam close-up">
+      <img src="../Assets/images/bl12.jpg" alt="Black Adam close-up">
+      <img src="../Assets/images/bl13.jpg" alt="Black Adam close-up">
+      <img src="../Assets/images/bl14.jpg" alt="Black Adam close-up">
+      <img src="../Assets/images/bl15.jpg" alt="Black Adam close-up">
+      <img src="../Assets/images/bl16.jpg" alt="Black Adam close-up">
+      <img src="../Assets/images/bl17.jpg" alt="Black Adam close-up">
+      <img src="../Assets/images/bl18.jpg" alt="Black Adam close-up">
+      
+     
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Superhero Universe. All rights reserved.</p>
+  </footer>
+</body>
+</html>

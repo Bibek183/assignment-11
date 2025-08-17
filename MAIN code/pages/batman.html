@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Batman | Superhero Profile</title>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #495baf;
+      color: #f3f3f3;
+      line-height: 1.6;
+    }
+                              
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: #222;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: red;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #00ffff;
+    }
+
+    #menu {
+      font-size: 22px;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    .home {
+            height: 100vh;
+            background: url("../Assets/images/img2-minn.jpg") no-repeat center center/cover;
+            display: flex;
+            justify-content: flex-start; /* move content to the left */
+            align-items: center; /* still vertically centered */
+            text-align: left; /* align text to the left */
+            padding: 0 20px; /* keep a little space from the edge */
+    }
+
+    
+
+    .home .content h1 {
+      font-size: 4rem;
+      color: #00ffff;
+      margin-bottom: 10px;
+    }
+
+    .home .content p {
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    section {
+      padding: 100px 20px 50px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: #00ffff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 18px;
+      text-align: justify;
+    }
+
+    .powers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .power-item {
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #00ffff;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .power-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid #00ffff;
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #222;
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background-color: #222;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border: 1px solid #00ffff;
+        padding: 10px;
+      }
+
+      .navbar.nav-toggle {
+        display: flex;
+      }
+
+      #menu {
+        display: block;
+      }
+    }
+  </style>
+
+  <script>
+    $(document).ready(function(){
+      $('#menu').click(function(){
+        $(this).toggleClass('fa-times');
+        $('.navbar').toggleClass('nav-toggle');
+      });
+
+      $(window).on('scroll load', function(){
+        $('#menu').removeClass('fa-times');
+        $('.navbar').removeClass('nav-toggle');
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <a href="pages/batman.html" class="logo">Super<span>Heroes</span></a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="#about">About</a>
+      <a href="#powers">Powers</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+    <div id="menu" class="fas fa-bars"></div>
+  </header>
+
+  <section class="home" id="home">
+    <div class="content">
+      <h1>Batman</h1>
+      <p>The Dark Knight</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h1>About Batman</h1>
+    <p>Batman, aka Bruce Wayne, witnessed the tragic loss of his parents in Gotham City and vowed to fight crime. Trained to physical and mental perfection, he uses his wealth, detective skills, and advanced gadgets to protect the city from villains. Batman made his first comic appearance in <strong>Detective Comics #27 (1939)</strong>.</p>
+    <p>The first major Batman movie was <strong>"Batman" (1989)</strong>, starring <strong>Michael Keaton</strong>. Since then, Batman has appeared in various films:</p>
+    <ul>
+      <li><strong>1989–1992:</strong> Michael Keaton in 2 films</li>
+      <li><strong>1995–1997:</strong> Val Kilmer and George Clooney in "Batman Forever" and "Batman & Robin"</li>
+      <li><strong>2005–2012:</strong> Christian Bale in "The Dark Knight Trilogy"</li>
+      <li><strong>2016–2023:</strong> Ben Affleck and Robert Pattinson in modern adaptations</li>
+    </ul>
+    <p>Each adaptation brought a new vision of the hero, evolving his personality, struggles, and moral choices to fit modern times.</p>
+  </section>
+
+  <section id="powers">
+    <h2>Super Powers</h2>
+    <div class="powers-grid">
+    <div class="power-item">Peak Human Strength</div>
+    <div class="power-item">Master Martial Artist</div>
+    <div class="power-item">Expert Detective Skills</div>
+    <div class="power-item">Genius-Level Intellect</div>
+    <div class="power-item">Stealth & Infiltration</div>
+    <div class="power-item">Advanced Technology & Gadgets</div>
+    <div class="power-item">Strategic Planning</div>
+    <div class="power-item">Fear as a Weapon</div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="../Assets/images/b11.jpg" alt="Batman close-up">
+      <img src="../Assets/images/b12.jpg" alt="Batman close-up">
+      <img src="../Assets/images/b13.jpg" alt="Batman close-up">
+      <img src="../Assets/images/b14.jpg" alt="Batman close-up">
+      <img src="../Assets/images/b15.jpg" alt="Batman close-up">
+      <img src="../Assets/images/b16.jpg" alt="Batman close-up">
+      <img src="../Assets/images/b17.jpg" alt="Batman close-up">
+      <img src="../Assets/images/b18.jpg" alt="Batman close-up">
+
+      
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Superhero Universe. All rights reserved.</p>
+  </footer>
+</body>
+</html>

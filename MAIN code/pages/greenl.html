@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Green Lantern | Superhero Profile</title>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #002b00;
+      color: #e0f7e0;
+      line-height: 1.6;
+    }
+                              
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: #003300;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00ff00;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #00cc00;
+    }
+
+    .navbar a {
+      color: #e0f7e0;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #00ff00;
+    }
+
+    #menu {
+      font-size: 22px;
+      color: #00ff00;
+      cursor: pointer;
+      display: none;
+    }
+
+    .home {
+      height: 100vh;
+      background: url("../Assets/images/img4-min.jpg") no-repeat center center/cover;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: left;
+      padding: 0 20px;
+    }
+
+    .home .content h1 {
+      font-size: 4rem;
+      color: #00ff00;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #00ff00;
+    }
+
+    .home .content p {
+      font-size: 1.5rem;
+      color: #d4ffd4;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+    }
+
+    section {
+      padding: 100px 20px 50px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: #00ff00;
+      margin-bottom: 20px;
+      text-align: center;
+      text-shadow: 0 0 8px #00ff00;
+    }
+
+    p {
+      font-size: 18px;
+      text-align: justify;
+    }
+
+    .powers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .power-item {
+      background: #004d00;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #00ff00;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .power-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: auto;
+      border-radius: 8px;
+      border: 2px solid #00ff00;
+      transition: 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #003300;
+      text-align: center;
+      padding: 20px;
+      color: #b3ffb3;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background-color: #003300;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border: 1px solid #00ff00;
+        padding: 10px;
+      }
+
+      .navbar.nav-toggle {
+        display: flex;
+      }
+
+      #menu {
+        display: block;
+      }
+    }
+  </style>
+
+  <script>
+    $(document).ready(function(){
+      $('#menu').click(function(){
+        $(this).toggleClass('fa-times');
+        $('.navbar').toggleClass('nav-toggle');
+      });
+
+      $(window).on('scroll load', function(){
+        $('#menu').removeClass('fa-times');
+        $('.navbar').removeClass('nav-toggle');
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <a href="pages/greenl.html" class="logo">Super<span>Heroes</span></a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="#about">About</a>
+      <a href="#powers">Powers</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+    <div id="menu" class="fas fa-bars"></div>
+  </header>
+
+  <section class="home" id="home">
+    <div class="content">
+      <h1>Green Lantern</h1>
+      <p>The Emerald Knight</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h1>About Green Lantern</h1>
+    <p>Green Lantern, most notably Hal Jordan, is a member of the intergalactic Green Lantern Corps, wielding a power ring that creates constructs fueled by willpower. The ring allows him to fight evil and protect the universe.</p>
+    <p>First appearing in <strong>All-American Comics #16 (1940)</strong>, Green Lantern has become a symbol of courage and determination.</p>
+    <p>Green Lantern has appeared in animated series and movies, and the live-action movie starred Ryan Reynolds as Hal Jordan.</p>
+  </section>
+
+  <section id="powers">
+    <h2>Super Powers</h2>
+    <div class="powers-grid">
+      <div class="power-item">Power Ring Constructs</div>
+      <div class="power-item">Flight</div>
+      <div class="power-item">Energy Projection</div>
+      <div class="power-item">Force Fields</div>
+      <div class="power-item">Universal Translator</div>
+      <div class="power-item">Environmental Playback</div>
+      <div class="power-item">Super Strength</div>
+      <div class="power-item">Energy Absorption</div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <img src="../Assets/images/g1.jpg" alt="Green Lantern flying">
+        <img src="../Assets/images/g2.jpg" alt="Green Lantern flying">
+        <img src="../Assets/images/g3.jpg" alt="Green Lantern flying">
+        <img src="../Assets/images/g4.jpg" alt="Green Lantern flying">
+        <img src="../Assets/images/g5.jpg" alt="Green Lantern flying">
+        <img src="../Assets/images/g6.jpg" alt="Green Lantern flying">
+        <img src="../Assets/images/g7.jpg" alt="Green Lantern flying">
+        <img src="../Assets/images/g8.jpg" alt="Green Lantern flying">
+        
+      
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Superhero Universe. All rights reserved.</p>
+  </footer>
+</body>
+</html>
